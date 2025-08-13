@@ -20,7 +20,7 @@ public class LoginApiTest {
             .header("Content-Type", "application/json")
             .body("{\"mobile\": \"7041127517\"}")
         .when()
-            .post("/Logincheckuser")
+            .post("/LoginCheckUser")
         .then()
             .statusCode(200)
             .body("status", equalTo("success"));
@@ -32,7 +32,7 @@ public class LoginApiTest {
             .header("Content-Type", "application/json")
             .body("{\"mobile\": \"123\"}") // invalid
         .when()
-            .post("/Logincheckuser")
+            .post("/LoginCheckUser")
         .then()
             .statusCode(400) // or whatever your CI3 returns
             .body("status", equalTo("error"));
