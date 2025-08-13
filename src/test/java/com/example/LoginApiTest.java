@@ -18,6 +18,7 @@ public class LoginApiTest {
     public void testValidLogin() {
         given()
             .header("Content-Type", "application/json")
+            .header("device_id","dfhksdfkjsdfks")
             .body("{\"mobile\": \"7041127517\"}")
         .when()
             .post("/LoginCheckUser")
@@ -30,6 +31,7 @@ public class LoginApiTest {
     public void testInvalidMobile() {
         given()
             .header("Content-Type", "application/json")
+            .header("device_id","dfhksdfkjsdfks")
             .body("{\"mobile\": \"123\"}") // invalid
         .when()
             .post("/LoginCheckUser")
